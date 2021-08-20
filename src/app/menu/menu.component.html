@@ -1,0 +1,55 @@
+ 
+ <div class="container-fluid  bg-light">
+    <div class="row">
+        <div class="col-md-12">
+
+            <nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgb(23, 71, 23);">
+                <div class="container-fluid">
+                  <a routerLink='/home'  > <img src="https://imgur.com/6SwzgoL.jpg" width="70px" alt="Logo da farmacia"></a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-5 ms-auto mb-2 mb-lg-0">
+                
+                      <li class="nav-item dropdown">
+                        <a routerLink='/categoria' class="nav-link dropdown-toggle text-white" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Categorias
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item">Medicamentos</a></li>
+                          <li><a class="dropdown-item">Genéricos</a></li>
+                          <li><a class="dropdown-item">Beleza e Higiene</a></li>
+                          <li><a class="dropdown-item">Saúde e bem-estar</a></li>
+                        </ul>
+                      </li>
+                      
+
+                      <form class="d-flex me-auto ms-4 col-md-9">
+                        <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
+                        <button class="btn btn-primary text-white" type="submit">Pesquisar</button>
+                      </form>
+
+                      <li class="me-5 ms-5 text-white">
+                        <a routerLink='/centralAtendimento' class="text-white">Central de Atendimento</a>
+                      </li>
+ 
+                    </ul>
+                    <ul class="d-flex me-auto ms-auto">
+                        <li class="me-auto ms-5 ">
+                            <a routerLink='/login' class="text-white"> Faça seu Login | </a>
+                            <a routerLink='/cadastro' class="text-white">cadastre-se</a>
+                        </li>
+
+                        <li class="ms-5 me-auto">
+                            <a  routerLink='/cesta' class="text-white">Cesta</a>
+                        </li>
+                    </ul>
+
+                  </div>
+                </div>
+              </nav>  
+
+        </div>
+    </div>
+ </div>
