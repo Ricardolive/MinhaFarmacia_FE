@@ -1,2 +1,2 @@
-Frontend do Ecommerce minha farmacia
+Frontend do Ecommerce minha farmacia <br>
 Framework utilizado: Angular
