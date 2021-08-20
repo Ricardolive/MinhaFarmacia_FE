@@ -1,1 +1,2 @@
-# MinhaFarmacia_FE
+Frontend do Ecommerce minha farmacia
+Framework utilizado: Angular
