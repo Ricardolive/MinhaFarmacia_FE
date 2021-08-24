@@ -1,0 +1,60 @@
+
+ 
+ 
+<div class="container-fluid bg-grey">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+
+            <div class="d-flex justify-content-center mt-3">
+                <h3>Novo Produto</h3>
+            </div>
+
+            <div class="col-md-6 bg-white border my-3 p-4">
+                <div class="form-group mt-3 mb-4">
+                    <label  for="nome">Nome</label>
+                    <input [(ngModel)]='produto.nome' type="text" class="form-control mt-2" placeholder="Nome do produto">
+                </div>
+           
+                <div class="form-group mb-4">
+                    <label for="descricao">Descrição:</label>
+                    <textarea [(ngModel)]='produto.descricao' class="form-control" name="descricao" id="" cols="30" rows="5" placeholder="Breve Descrição do produto"></textarea>
+                </div>
+ 
+                <div class="form-group mb-4">
+                    <label for="imagem">Imagem:</label>
+                    <input [(ngModel)]='produto.imagem' type="text" class="form-control mt-2" placeholder="Imagem do produto">
+                </div>
+
+                <div class="form-group mb-4">
+                    <label for="texto">Texto:</label>
+                    <textarea  [(ngModel)]='produto.texto' class="form-control" name="texto" id="" cols="30" rows="10" placeholder="Descrição completa do produto"></textarea>
+                </div>
+
+                <div class="form-group mb-4">
+                    <label for="preco">Preço:</label>
+                    <input [(ngModel)]='produto.preco' type="text" class="form-control mt-2" placeholder="Preço do produto">
+                </div>
+
+                <div class="form-group mb-4">
+                    <label for="fornecedor">Fornecedor:</label>
+                    <select [(ngModel)]='idFornecedor' name="forn" id="forn" class="form-select mt-2"  (change)='findByIdFornecedor()'>
+                        <option *ngFor='let item of listaForn'  value="{{item.id}}">{{item.nome}}</option> 
+                    </select>
+                </div>
+
+                <div class="form-group mb-4">
+                    <label for="categoria">Categoria:</label>
+                    <select [(ngModel)]='idCategoria' name="categoria" id="categoria" class="form-select mt-2"  (change)='findByIdCategoria()'>
+                        <option *ngFor='let item of listaCategorias'  value="{{item.id}}">{{item.nome}}</option> 
+                    </select>
+                </div>
+ 
+  
+                <div class="d-flex justify-content-center mt-5 ">
+                    <button class="btn btn-primary  w-50 " (click)='cadastrar()'>Cadastrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

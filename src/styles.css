@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+ 
+ .bg-grey{
+    background-color: rgb(219, 217, 217);
+ }
+
+ ul{
+   list-style: none;
+ }
+   
