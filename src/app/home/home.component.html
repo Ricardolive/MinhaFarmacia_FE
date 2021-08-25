@@ -39,7 +39,11 @@
     <div  *ngFor='let item of listaProdutos' class="row">
         <div class="col-md-12 d-flex justify-content-center mt-4">
             <div class="card" style="width: 18rem;">
-                <img src="" class="card-img-top" alt="">
+
+              <div class="d-flex justify-content-center mt-2">
+                <img src="{{item.imagem}}" class="card-img-top w-50" alt="">
+              </div>
+                
                 <div class="card-body">
                   <h5 class="card-title">{{item.nome}}</h5>
                   <p class="card-text">{{item.descricao}}</p>
@@ -62,7 +66,9 @@
     <div  *ngFor='let item of listaProdutos' class="row">
       <div class="col-md-12 d-flex justify-content-center mt-4">
           <div class="card" style="width: 18rem;">
-              <img src="" class="card-img-top" alt="">
+            <div class="d-flex justify-content-center mt-2">
+              <img src="{{item.imagem}}" class="card-img-top w-50" alt="">
+            </div>
               <div class="card-body">
                 <h5 class="card-title">{{item.nome}}</h5>
                 <p class="card-text">{{item.descricao}}</p>

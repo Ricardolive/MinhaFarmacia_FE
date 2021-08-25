@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from 'src/app/model/Categoria';
 import { Fornecedor } from 'src/app/model/Fornecedor';
 import { Produto } from 'src/app/model/Produto';
@@ -8,11 +8,11 @@ import { FornecedorService } from 'src/app/service/fornecedor.service';
 import { ProdutoService } from 'src/app/service/produto.service';
 
 @Component({
-  selector: 'app-produto-create',
-  templateUrl: './produto-create.component.html',
-  styleUrls: ['./produto-create.component.css']
+  selector: 'app-produto-edit',
+  templateUrl: './produto-edit.component.html',
+  styleUrls: ['./produto-edit.component.css']
 })
-export class ProdutoCreateComponent implements OnInit {
+export class ProdutoEditComponent implements OnInit {
 
   idFornecedor: number;
   idCategoria: number;
@@ -22,18 +22,28 @@ export class ProdutoCreateComponent implements OnInit {
   fornecedor: Fornecedor = new Fornecedor()
   categoria: Categoria = new Categoria()
 
-  constructor(
-                private produtoService: ProdutoService,
-                private fornecedorService: FornecedorService,
-                private categoriaService: CategoriaService,
-                private router: Router ) { }
+  constructor(private produtoService: ProdutoService,
+              private fornecedorService: FornecedorService,
+              private categoriaService: CategoriaService,
+              private router: Router,
+              private route: ActivatedRoute ) { }
 
-  ngOnInit() {
+  ngOnInit(){
+
+    let id = this.route.snapshot.params['id']
+    this.findByIdProduto(id)
+
     this.findAllCategoria()
     this.findAllFornecedor()
-  
   }
 
+  findByIdProduto(id: number){
+    this.produtoService.getByIdProduto(id).subscribe((resp: Produto)=>{
+      this.produto= resp
+    })
+  }
+
+ 
   findAllFornecedor(){
     this.fornecedorService.getAllFornecedor().subscribe((resp: Fornecedor[])=>{
       this.listaForn = resp
@@ -58,17 +68,18 @@ export class ProdutoCreateComponent implements OnInit {
     })
   }
 
-  cadastrar(){
+  atualizar(){
 
     this.produto.fornecedor = this.fornecedor
     this.produto.categoria = this.categoria
-    this.produtoService.postProduto(this.produto).subscribe((resp: Produto)=>{
+    this.produtoService.putProduto(this.produto).subscribe((resp: Produto)=>{
       this.produto = resp;
-      alert('Produto cadastrado com sucesso!')
+      alert('Produto atualizado com sucesso!')
       this.produto = new Produto()
+      this.router.navigate(['/listaProduto'])
     })
 
-    this.router.navigate([''])
+    
   }
 
 }

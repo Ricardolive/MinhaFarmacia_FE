@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Categoria } from 'src/app/model/Categoria';
 import { CategoriaService } from 'src/app/service/categoria.service';
 
@@ -11,7 +12,7 @@ export class CategoriaCreateComponent implements OnInit {
 
   categoria: Categoria = new Categoria()
 
-  constructor(private categoriaService: CategoriaService) { }
+  constructor(private categoriaService: CategoriaService, private router: Router) { }
 
   ngOnInit(){
   }
@@ -22,6 +23,8 @@ export class CategoriaCreateComponent implements OnInit {
       alert('Categoria cadastrada com sucesso!')
       this.categoria = new Categoria()
     })
+
+    this.router.navigate([''])
   }
 
 }

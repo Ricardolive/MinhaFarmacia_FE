@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Filial } from 'src/app/model/Filial';
 import { FilialService } from 'src/app/service/filial.service';
 
@@ -11,7 +12,7 @@ export class FilialCreateComponent implements OnInit {
 
   filial: Filial = new Filial()
 
-  constructor(private filialService: FilialService) { }
+  constructor(private filialService: FilialService, private router: Router) { }
 
   ngOnInit(){
   }
@@ -22,6 +23,8 @@ export class FilialCreateComponent implements OnInit {
       alert('Filial cadastrada com sucesso!')
       this.filial = new Filial()
     })
+
+    this.router.navigate([''])
   }
 
 }

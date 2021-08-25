@@ -18,6 +18,14 @@ import { FornecedorCreateComponent } from './create/fornecedor-create/fornecedor
 import { CategoriaCreateComponent } from './create/categoria-create/categoria-create.component';
 import { ProdutoCreateComponent } from './create/produto-create/produto-create.component';
 import { FilialCreateComponent } from './create/filial-create/filial-create.component';
+import { FornecedorEditComponent } from './edit/fornecedor-edit/fornecedor-edit.component';
+import { FornecedorListComponent } from './list/fornecedor-list/fornecedor-list.component';
+import { FilialListComponent } from './list/filial-list/filial-list.component';
+import { CategoriaListComponent } from './list/categoria-list/categoria-list.component';
+import { ProdutoListComponent } from './list/produto-list/produto-list.component';
+import { FilialEditComponent } from './edit/filial-edit/filial-edit.component';
+import { CategoriaEditComponent } from './edit/categoria-edit/categoria-edit.component';
+import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +41,15 @@ import { FilialCreateComponent } from './create/filial-create/filial-create.comp
     FornecedorCreateComponent,
     CategoriaCreateComponent,
     ProdutoCreateComponent,
-    FilialCreateComponent
+    FilialCreateComponent,
+    FornecedorEditComponent,
+    FornecedorListComponent,
+    FilialListComponent,
+    CategoriaListComponent,
+    ProdutoListComponent,
+    FilialEditComponent,
+    CategoriaEditComponent,
+    ProdutoEditComponent
   ],
   imports: [
     BrowserModule,

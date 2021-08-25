@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Fornecedor } from 'src/app/model/Fornecedor';
 import { FornecedorService } from 'src/app/service/fornecedor.service';
 
@@ -11,7 +12,7 @@ export class FornecedorCreateComponent implements OnInit {
 
   fornecedor: Fornecedor = new Fornecedor()
  
-  constructor(private fornecedorService: FornecedorService) { }
+  constructor(private fornecedorService: FornecedorService, private router: Router) { }
 
   ngOnInit(){
   }
@@ -20,8 +21,10 @@ export class FornecedorCreateComponent implements OnInit {
     this.fornecedorService.postFornecedor(this.fornecedor).subscribe((resp: Fornecedor)=>{
       this.fornecedor = resp;
       alert('Fornecedor cadastrado com sucesso!')
+      this.router.navigate(['/listaFornecedor'])
       this.fornecedor = new Fornecedor()
     })
+    
   }
 
 }

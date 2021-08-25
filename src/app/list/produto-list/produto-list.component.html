@@ -1,0 +1,39 @@
+
+<div class="container-fluid bg-grey">
+    <div class="container bg-white">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-8 mt-5 ms-auto ">
+        
+                <table class="table table-striped border">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Descrição</th>
+                            <th scope="col" class="text-end ">Modificações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor='let item of listaProduto'>
+                            <th>{{item.id}} </th>
+                            <td>{{item.nome}} </td>
+                            <td class="d-flex justify-content-end">	
+                                <button class="btn btn-primary me-3" [routerLink]="['/produto-edit',item.id]"> Editar </button>
+                                <button class="btn btn-danger"> Apagar </button>
+                           </td>
+                       </tr>
+                    </tbody>
+                </table>
+            </div>
+        
+            <div class="col-md-3 ms-auto mt-5">
+                <ul class="navbar-nav  mb-2 mb-lg-0 mt-4">
+         
+                    <li class="me-5 ms-5">
+                      <a routerLink='/novoProduto'>Novo Produto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+</div>
