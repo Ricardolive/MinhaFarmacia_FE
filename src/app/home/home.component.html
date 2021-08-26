@@ -49,7 +49,7 @@
                   <p class="card-text">{{item.descricao}}</p>
                   <h5 class="card-text text-center">{{item.preco}}</h5>
                   <div class="d-flex justify-content-center">
-                    <a href="#" class="btn btn-primary">Comprar</a>
+                    <a (click)='adicionarCesta(item)' class="btn btn-primary">Comprar</a>
                   </div>
                   
                 </div>
@@ -74,7 +74,7 @@
                 <p class="card-text">{{item.descricao}}</p>
                 <h5 class="card-text text-center">{{item.preco}}</h5>
                 <div class="d-flex justify-content-center">
-                  <a href="#" class="btn btn-primary">Comprar</a>
+                  <a (click)='adicionarCesta(item)' class="btn btn-primary">Comprar</a>
                 </div>
                 
               </div>

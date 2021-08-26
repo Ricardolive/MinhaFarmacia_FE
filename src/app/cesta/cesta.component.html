@@ -1,36 +1,57 @@
  
 
 <div class="container-fluid bg-grey">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-8 mt-3 ">
-                <div class="card" style="width: 60rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-9 mt-3">
+ 
+                    <div *ngFor='let prod of produtos;let i=index' class="row bg-white mt-2">
+                        <div class="col-md-1">
+                            <img src="{{prod.imagem}}" width="50px" >
+                        </div>
+   
+                       <div class="col-md-6 d-flex justify-content-center mt-3">
+                           <p>{{prod.nome}}</p> 
+                       </div>
+   
+                       <div class="col-md-2 mt-3">
+                           <input [(ngModel)]='quant' type="text" class="w-50 text-center" disabled >
+                       </div>
+   
+                       <div class="col-md-2 mt-3">
+                           <p>R$ {{prod.preco}}</p> 
+                       </div>
+   
+                       <div class="col-md-1 mt-3">
+                           <a routerLink='/cesta' (click)='excluir(i)'>Excluir</a>
+                       </div>
+   
                     </div>
-                </div>
+           
+                 
             </div>
 
-        <div class="col-md-2 mt-3 mb-4 ms-auto me-5">
+        <div class="col-md-2 mt-3 mb-4 me-5 ms-auto">
             <div class="card" style="width: 15rem;">
 
                 <div class="card-body">
                 
                     <div class="form-group">
-                        <label for="freet">Calcule o frete</label>
-                        <input type="text" class="form-control">
+                        <label for="frete">Frete</label>
+                        <input [(ngModel)]='frete' type="text" class="form-control" disabled>
                     </div>
 
-                    <div class="form-group">
-                        <label for="freet">Cupom de desconto</label>
-                        <input type="text" class="form-control">
+ 
+                    <div class="mt-5">
+                        <h5>Total </h5>
+                        <div class="form-group d-flex align-items-center mt-3">
+                            <label for="total">R$: </label>
+                            <input [(ngModel)]='total' type="text" disabled class="form-control ms-3 w-50">
+                        </div>    
                     </div>
 
-                    <div class="border">
-                        <p>Resumo do pedido</p>
-                        <p>Total</p>
+                    <div class="mt-5 d-flex justify-content-center">
+                        <button class="btn btn-primary">Finalizar Compra</button>
                     </div>
 
                 </div>
