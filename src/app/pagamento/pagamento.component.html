@@ -1,0 +1,93 @@
+<div class="container-fluid bg-grey">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-5 mt-3 mb-4">
+                <div class="card" style="width: 20rem;">
+                    <div class="card-body">
+                        <h5 class="card-title mt-3 d-flex justify-content-center bg-light p-2">Endereço de entrega</h5>
+                        <ul class="p-2">
+                           <li class="p-2"> Rua vinte, Nº 12</li> 
+                            <a routerLink='/pagamento' class="d-flex justify-content-end" data-bs-toggle="modal" data-bs-target="#enderecoModal">Editar</a>
+                          
+                        </ul>
+
+                        <div class="card-body">
+                            <h5 class="card-title mt-3 d-flex justify-content-center bg-light p-2">Contato</h5>
+                            <ul>
+                                <li class="p-2 mt-2">email@hotmail.com</li> 
+                                <a routerLink='/pagamento' class="d-flex justify-content-end" data-bs-toggle="modal" data-bs-target="#contatoModal">Editar</a>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+ 
+            <div class="col-md-5 mt-3">
+                <div class="card" style="width: 45rem;">
+                    <div class="card-body">
+                        <h5 class="card-title mt-3 d-flex justify-content-center">Resumo da compra</h5>
+                        <ul class="p-2">
+                           <li class="bg-light p-2 text-center"> Valor total:</li> 
+
+                           <div class="d-flex justify-content-center">
+                                <input type="text" disabled placeholder=" R$122,99">
+                           </div>
+                          
+                            <li class="bg-light text-center p-2 mt-4">Frete:</li> 
+
+                            <div class="d-flex justify-content-center">
+                                <input type="text" disabled placeholder="R$3,75">
+                           </div>
+                        </ul>
+                    </div>
+                    
+                    <div class=" d-flex justify-content-center mb-4 mt-3" >
+                        <button class="btn btn-primary w-50" (click)='finalizarPedido()'>Finalizar pedido</button>
+                    </div>
+                </div>
+            </div>
+ 
+        </div>
+    </div>
+ 
+    <!-- Modal Endereço de entrega-->
+  <div class="modal fade" id="enderecoModal" tabindex="-1" aria-labelledby="enderecoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-green">
+          <h5 class="modal-title text-white" id="enderecoModalLabel">Meu endereço</h5>
+        </div>
+        <div class="modal-body">
+            <label for="endereco">Endereço:</label>
+            <input type="text"  class="form-control mt-3" placeholder="Digite seu endereço" >
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" >Confirmar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <!-- Modal Contato-->
+   <div class="modal fade" id="contatoModal" tabindex="-1" aria-labelledby="contatoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-green">
+          <h5 class="modal-title text-white" id="contatoModalLabel">Meu email</h5>
+        </div>
+        <div class="modal-body">
+            <label for="contato">Email:</label>
+            <input type="text"  class="form-control mt-3" placeholder="Digite seu email" >
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" >Confirmar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+
+</div>

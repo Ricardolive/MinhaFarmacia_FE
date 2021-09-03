@@ -8,37 +8,98 @@
 
         <div class="row d-flex justify-content-center mt-3 ms-auto me-auto">
             <div class="col-md-2">
-                <button class="btn btn-outline-primary p-3 w-100">Compras</button>
+                <button class="btn btn-outline-primary p-3 w-100" (click)='setAssunto("compras")'>Compras</button>
             </div>
             <div class="col-md-2">
-                <button class="btn btn-outline-primary p-3  w-100">Cancelamento</button>
+                <button class="btn btn-outline-primary p-3  w-100"
+                    (click)='setAssunto("cancelamento")'>Cancelamento</button>
             </div>
             <div class="col-md-2">
-                <button class="btn btn-outline-primary  w-100">Formas de Pagamento</button>
+                <button class="btn btn-outline-primary  w-100" (click)='setAssunto("pagamento")'>Formas de Pagamento</button>
             </div>
         </div>
 
         <div class="row  d-flex justify-content-center p-4 ">
             <div class="col-md-2">
 
-                <button class="btn btn-outline-primary p-3 w-100">Compre e Retire</button>
+                <button class="btn btn-outline-primary p-3 w-100" (click)='setAssunto("compreRetire")'>Compre e Retire</button>
             </div>
             <div class="col-md-2">
-                <button class="btn btn-outline-primary p-3 w-100 ms-4">Contato</button>
+                <button class="btn btn-outline-primary p-3 w-100 ms-4" (click)='setAssunto("contato")'>Contato</button>
             </div>
         </div>
     </div>
 
 
-    <div class="container bg-white mt-5">
-        <div>
+    <div [ngSwitch]="assunto" class="container bg-white mt-5">
+        <div *ngSwitchCase="'compras'">
             <h5 class="d-flex justify-content-center p-3">DUVIDAS SOBRE COMPRAS</h5>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur id esse dolorum laboriosam? Odit, impedit dolorum qui perferendis voluptatum labore deleniti quisquam perspiciatis esse harum, at consectetur dolores amet cupiditate.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque quibusdam repudiandae dolorum, praesentium beatae quasi iste fugit ea, numquam rem ullam nemo repellat, in reiciendis qui? Cupiditate similique minima quibusdam.
+            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid reiciendis ullam vero quo id incidunt soluta blanditiis assumenda sit nam totam optio explicabo rem dolorum, qui maiores rerum voluptatibus facere!
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit non a, id numquam natus dicta voluptates provident recusandae tenetur sint nam qui labore animi inventore. Unde nemo et consectetur ipsum?
             </p>
+        </div>
+
+
+        <div *ngSwitchCase="'cancelamento'">
+            <h5 class="d-flex justify-content-center p-3">DUVIDAS SOBRE CANCELAMENTO</h5>
+            <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam reprehenderit molestias ex nam blanditiis consequuntur dicta! Illo sit aut possimus vitae nemo, iste temporibus modi ex quibusdam commodi exercitationem earum.
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis minus praesentium rerum expedita repellat similique minima quis dolorem eius explicabo! Doloribus repudiandae quibusdam nulla nesciunt magni sit expedita nobis velit?
+            </p>
+        </div>
+
+        <div *ngSwitchCase="'pagamento'">
+            <h5 class="d-flex justify-content-center p-3">DUVIDAS SOBRE FORMAS DE PAGAMENTO</h5>
+            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, provident non animi eligendi, error eius esse, placeat perspiciatis totam architecto quod repellat unde incidunt sed maiores ratione dolor eaque quos?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Id corrupti delectus incidunt illum optio voluptatem rerum iusto soluta eveniet natus laborum, quam possimus provident blanditiis impedit reiciendis alias libero eos.
+            </p>
+        </div>
+
+        <div *ngSwitchCase="'compreRetire'">
+            <h5 class="d-flex justify-content-center p-3">DUVIDAS SOBRE COMPRE E RETIRE</h5>
+            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, provident non animi eligendi, error eius esse, placeat perspiciatis totam architecto quod repellat unde incidunt sed maiores ratione dolor eaque quos?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Id corrupti delectus incidunt illum optio voluptatem rerum iusto soluta eveniet natus laborum, quam possimus provident blanditiis impedit reiciendis alias libero eos.
+            </p>
+        </div>
+
+        <div *ngSwitchCase="'contato'">
+            <h3 class="d-flex justify-content-center pt-5 ">Entre em contato com a gente</h3>
+            <p class="text-center"> Preencha o formulário e envie-nos sua duvida</p>
+
+           
+ 
+ 
+<div class="container-fluid bg-light">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+   
+            <div class="col-md-6 bg-white border mt-4 p-3 mb-5">
+                <div class="form-group mt-3 mb-4">
+                    <label  for="nome">Nome</label>
+                    <input type="text" class="form-control mt-2" placeholder="Digite seu nome">
+                </div>
+
+                <div class="form-group mb-4">
+                    <label for="email">Email:</label>
+                    <input type="text" class="form-control mt-2" placeholder="Informe seu email">
+                </div>
+           
+                <div class="form-group mt-3 mb-4">
+                    <label for="assunto">Assunto:</label>
+                    <textarea  class="form-control mt-2" name="assunto" id="" cols="30" rows="5" placeholder=" Digite sua dúvida"></textarea>
+                </div>
+      
+                <div class="d-flex justify-content-center mt-5 ">
+                    <button class="btn btn-primary  w-50 " (click)='enviar()'>Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
         </div>
     </div>
 
- 
+
 
 </div>

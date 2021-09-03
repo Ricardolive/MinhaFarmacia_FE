@@ -19,6 +19,7 @@ import { FilialListComponent } from './list/filial-list/filial-list.component';
 import { FornecedorListComponent } from './list/fornecedor-list/fornecedor-list.component';
 import { ProdutoListComponent } from './list/produto-list/produto-list.component';
 import { LoginComponent } from './login/login.component';
+import { PagamentoComponent } from './pagamento/pagamento.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -39,7 +40,8 @@ const routes: Routes = [
   {path: 'fornecedor-edit/:id', component: FornecedorEditComponent},
   {path: 'filial-edit/:id', component: FilialEditComponent},
   {path: 'categoria-edit/:id', component: CategoriaEditComponent},
-  {path: 'produto-edit/:id', component: ProdutoEditComponent}
+  {path: 'produto-edit/:id', component: ProdutoEditComponent},
+  {path: 'pagamento', component: PagamentoComponent}
 	
 
 ];

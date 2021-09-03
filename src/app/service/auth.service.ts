@@ -29,4 +29,13 @@ logado(){
     }
     return ok;
 }
+
+admin(){
+  let ok: boolean = false;
+
+    if(environment.tipo == 'adm'){
+        ok= true
+    }
+    return ok;
+}
 }

@@ -17,10 +17,8 @@
                           Categorias
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <li><a routerLink='/categoria' class="dropdown-item">Medicamentos</a></li>
-                          <li><a routerLink='/categoria' class="dropdown-item">Genéricos</a></li>
-                          <li><a routerLink='/categoria' class="dropdown-item">Beleza e Higiene</a></li>
-                          <li><a routerLink='/categoria' class="dropdown-item">Saúde e bem-estar</a></li>
+                          <li *ngFor='let item of listaCategoria'><a routerLink='/categoria' class="dropdown-item">{{item.nome}}</a></li>
+                         
                         </ul>
                       </li>
                       
@@ -36,9 +34,19 @@
  
                     </ul>
                     <ul class="d-flex me-auto ms-auto">
-                        <li class="me-auto ms-5 ">
+                        <li *ngIf='!authService.logado()' class="me-auto ms-5 ">
                             <a routerLink='/login' class="text-white"> Faça seu Login | </a>
                             <a routerLink='/cadastro' class="text-white">cadastre-se</a>
+                        </li>
+
+                        <li *ngIf='authService.logado()' class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle text-white" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                           Perfil
+                          </a>
+                          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a routerLink='/home' class="dropdown-item" (click)='sair()'>Sair</a></li>
+                           
+                          </ul>
                         </li>
 
                         <li class="ms-5 me-auto">
@@ -52,7 +60,7 @@
              
               
               <!-- MENU DE FUNÇÕES ADMINISTRATIVAS -->
-              <nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgb(32, 23, 71);">
+              <nav  *ngIf='authService.admin()' class="navbar navbar-expand-lg navbar-light" style="background-color: rgb(32, 23, 71);">
                 <div class="container-fluid">
                  
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

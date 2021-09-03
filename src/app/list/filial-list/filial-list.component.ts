@@ -10,6 +10,7 @@ import { FilialService } from 'src/app/service/filial.service';
 export class FilialListComponent implements OnInit {
 
   listaFilial: Filial[];
+  idFilial:number;
 
   constructor(private filialService: FilialService) { }
 
@@ -24,4 +25,13 @@ export class FilialListComponent implements OnInit {
     })
   }
 
+  setIdFilial(idFil:number){
+    this.idFilial = idFil
+  }
+
+  deletar(){
+   this.filialService.deleteFilial(this.idFilial)
+   alert('Filial apagada com sucesso!')
+  }
+ 
 }

@@ -10,6 +10,7 @@ import { CategoriaService } from 'src/app/service/categoria.service';
 export class CategoriaListComponent implements OnInit {
 
   listaCategoria: Categoria[];
+  idCategoria: number;
 
   constructor(private categoriaService: CategoriaService) { }
 
@@ -23,6 +24,15 @@ export class CategoriaListComponent implements OnInit {
       this.listaCategoria = resp
     })
 
+  }
+
+  setIdCategoria(idCat:number){
+    this.idCategoria = idCat
+  }
+
+  deletar(){
+   this.categoriaService.deleteCategoria(this.idCategoria)
+   alert('Categoria apagada com sucesso!')
   }
 
 }

@@ -18,12 +18,31 @@
                             <td>{{item.nome}} </td>
                             <td class="d-flex justify-content-end">	
                                 <button class="btn btn-primary me-3" [routerLink]="['/categoria-edit',item.id]"> Editar </button>
-                                <button class="btn btn-danger"> Apagar </button>
+                                <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#listaModal" (click)='setIdCategoria(item.id)'> Apagar </button>
                            </td>
                        </tr>
                     </tbody>
                 </table>
             </div>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="listaModal" tabindex="-1" aria-labelledby="listaModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-green">
+          <h5 class="modal-title text-white" id="listaModalLabel">Apagar Categoria</h5>
+        </div>
+        <div class="modal-body">
+         Deseja realmente apagar essa categoria?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Não</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)='deletar()' >Sim</button>
+        </div>
+      </div>
+    </div>
+  </div>
         
             <div class="col-md-3 ms-auto mt-5">
                 <ul class="navbar-nav  mb-2 mb-lg-0 mt-4">

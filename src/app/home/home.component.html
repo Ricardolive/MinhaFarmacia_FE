@@ -10,13 +10,13 @@
       </div>
       <div class="carousel-inner" >
         <div class="carousel-item active  mt-3 mb-3">
-          <img src="https://imgur.com/dvnJZ2b.jpg" class="d-block ms-auto me-auto" width="1200px" height="340px">
+          <img src="https://imgur.com/dvnJZ2b.jpg" class="d-block ms-auto me-auto" width="1200px" height="365px">
         </div>
         <div class="carousel-item  mt-3 mb-3">
-          <img src="https://imgur.com/clTfKdE.jpg" class="d-block ms-auto me-auto" width="1200px" height="340px">
+          <img src="https://imgur.com/clTfKdE.jpg" class="d-block ms-auto me-auto" width="1200px" height="365px">
         </div>
         <div class="carousel-item  mt-3 mb-3">
-          <img src="https://imgur.com/5Q23A0Q.jpg" class="d-block ms-auto me-auto" width="1200px" height="340px">
+          <img src="https://imgur.com/5Q23A0Q.jpg" class="d-block ms-auto me-auto" width="1200px" height="365px">
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -36,8 +36,8 @@
         </div>
     </div>
 
-    <div  *ngFor='let item of listaProdutos' class="row">
-        <div class="col-md-12 d-flex justify-content-center mt-4">
+    <div   class="row d-flex justify-content-center">
+        <div  *ngFor='let item of listaProdutos' class="col-md-3  mt-4">
             <div class="card" style="width: 18rem;">
 
               <div class="d-flex justify-content-center mt-2">
@@ -47,7 +47,7 @@
                 <div class="card-body">
                   <h5 class="card-title">{{item.nome}}</h5>
                   <p class="card-text">{{item.descricao}}</p>
-                  <h5 class="card-text text-center">{{item.preco}}</h5>
+                  <h5 class="card-text text-center mb-3">R${{item.preco | number: '1.2'}}</h5>
                   <div class="d-flex justify-content-center">
                     <a (click)='adicionarCesta(item)' class="btn btn-primary">Comprar</a>
                   </div>
@@ -63,8 +63,8 @@
         </div>
     </div>
 
-    <div  *ngFor='let item of listaProdutos' class="row">
-      <div class="col-md-12 d-flex justify-content-center mt-4">
+    <div   class="row d-flex justify-content-center">
+      <div  *ngFor='let item of listaProdutos' class="col-md-3 mt-4 mb-4">
           <div class="card" style="width: 18rem;">
             <div class="d-flex justify-content-center mt-2">
               <img src="{{item.imagem}}" class="card-img-top w-50" alt="">
@@ -72,7 +72,7 @@
               <div class="card-body">
                 <h5 class="card-title">{{item.nome}}</h5>
                 <p class="card-text">{{item.descricao}}</p>
-                <h5 class="card-text text-center">{{item.preco}}</h5>
+                <h5 class="card-text text-center">{{item.preco | number: '1.2'}}</h5>
                 <div class="d-flex justify-content-center">
                   <a (click)='adicionarCesta(item)' class="btn btn-primary">Comprar</a>
                 </div>

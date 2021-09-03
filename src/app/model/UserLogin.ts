@@ -2,9 +2,9 @@
 export class UserLogin{
     
     public id: number;
-	public nome: String;
-	public cpf: String;
-	public senha: String;
-	public token: String;
-	public tipo: String;
+	public nome: string;
+	public cpf: string;
+	public senha: string;
+	public token: string;
+	public tipo: string;
 }

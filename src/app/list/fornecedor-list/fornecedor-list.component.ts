@@ -10,7 +10,9 @@ import { FornecedorService } from 'src/app/service/fornecedor.service';
 export class FornecedorListComponent implements OnInit {
 
   listaForn: Fornecedor[];
-
+  idFornecedor: number;
+ 
+  
   constructor(private fornecedorService: FornecedorService) { }
 
   ngOnInit(){
@@ -22,6 +24,15 @@ export class FornecedorListComponent implements OnInit {
       this.listaForn = resp
     })
 
+  }
+
+  setIdForn(idForn:number){
+    this.idFornecedor = idForn
+  }
+
+  deletar(){
+   this.fornecedorService.deleteFornecedor(this.idFornecedor)
+   alert('Fornecedor apagado com sucesso!')
   }
 
 }

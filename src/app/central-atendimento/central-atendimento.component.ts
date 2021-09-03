@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+ 
 
 @Component({
   selector: 'app-central-atendimento',
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./central-atendimento.component.css']
 })
 export class CentralAtendimentoComponent implements OnInit {
+
+  assunto: string
  
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+  }
+
+  setAssunto(nome:string){
+    this.assunto = nome
+  }
+
+  enviar(){
+    alert('Email enviado com sucesso!')
   }
 
 }

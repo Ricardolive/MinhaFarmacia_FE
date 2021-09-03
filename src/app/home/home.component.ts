@@ -24,9 +24,11 @@ export class HomeComponent implements OnInit {
       this.listaProdutos = resp
     })
   }
-
+ 
+ 
   adicionarCesta(item:any){
     this.vendaService.setCesta(item)
+    alert('Produto adicionado a cesta!')
 
   }
 

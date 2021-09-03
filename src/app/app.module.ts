@@ -12,7 +12,7 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CentralAtendimentoComponent } from './central-atendimento/central-atendimento.component';
 import { CestaComponent } from './cesta/cesta.component';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { CommonModule, HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { FornecedorCreateComponent } from './create/fornecedor-create/fornecedor-create.component';
 import { CategoriaCreateComponent } from './create/categoria-create/categoria-create.component';
@@ -26,6 +26,7 @@ import { ProdutoListComponent } from './list/produto-list/produto-list.component
 import { FilialEditComponent } from './edit/filial-edit/filial-edit.component';
 import { CategoriaEditComponent } from './edit/categoria-edit/categoria-edit.component';
 import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
+import { PagamentoComponent } from './pagamento/pagamento.component';
 
 @NgModule({
   declarations: [
@@ -49,13 +50,15 @@ import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component
     ProdutoListComponent,
     FilialEditComponent,
     CategoriaEditComponent,
-    ProdutoEditComponent
+    ProdutoEditComponent,
+    PagamentoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule
   ],
   providers: [
     {

@@ -10,6 +10,7 @@ import { ProdutoService } from 'src/app/service/produto.service';
 export class ProdutoListComponent implements OnInit {
 
 listaProduto: Produto[];
+idProd:number;
 
   constructor(private produtoService: ProdutoService) { }
 
@@ -22,6 +23,15 @@ listaProduto: Produto[];
     this.produtoService.getAllProduto().subscribe((resp: Produto[])=>{
       this.listaProduto = resp
     })
+  }
+
+  setIdProduto(idProds:number){
+    this.idProd = idProds
+  }
+
+  deletar(){
+   this.produtoService.deleteProduto(this.idProd)
+   alert('Produto apagado com sucesso!')
   }
 
 }
